@@ -1,0 +1,47 @@
+<ion-view title="MarketPlace" id="page3">
+  <ion-content padding="true" class="has-header">
+    <h4 id="marketPlace-heading15" ng-if="autenticated()" style="color:#7C7C7C;text-align:center;">Seja bem vindo, {{userData.name}}</h4>
+    <ion-item class="item-left">
+
+      <img style="width:50%;" src="https://www.accenture.com/t20170325T025930__w__/us-en/_acnmedia/Accenture/Dev/ComponentImages/logo-accenture.svg">
+      <a ui-sref="menu.login()">
+        <button class="button button-calm item-right button-outline" style="float:right;margin-top:08%" ng-if="!autenticated()">Login</button>
+      </a>
+    </ion-item>
+    <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider2" delegate-handle="slider2" id="marketPlace-slider2" style="width:100%;height:200px;">
+      <ion-slide-page id="marketPlace-slide21" style="background:url(&quot;img/LZcqOxqCQKecRRl7aLrf_Ai.PNG&quot;) no-repeat center;background-size:cover;" class="padding">
+        <div style="display:table;width:100%;height:100%;">
+          <div style="display:table-row;">
+            <div style="display:table-cell;vertical-align:middle;"></div>
+          </div>
+        </div>
+      </ion-slide-page>
+      <ion-slide-page id="marketPlace-slide22" style="background:url(&quot;img/WdHXPZeuQUOUSNWv6zO5_DevOps.PNG&quot;) no-repeat center;background-size:cover;" class="padding">
+        <div style="display:table;width:100%;height:100%;">
+          <div style="display:table-row;">
+            <div style="display:table-cell;vertical-align:middle;"></div>
+          </div>
+        </div>
+      </ion-slide-page>
+      <ion-slide-page id="marketPlace-slide23" style="background:url(&quot;img/hJBvGvGMTF2GumWlnNw0_Cloud.PNG&quot;) no-repeat center;background-size:cover;" class="padding">
+        <div style="display:table;width:100%;height:100%;">
+          <div style="display:table-row;">
+            <div style="display:table-cell;vertical-align:middle;"></div>
+          </div>
+        </div>
+      </ion-slide-page>
+    </ion-slides>
+    <div class="spacer" style="width: 300px; height: 7px;"></div>
+    <h2 id="marketPlace-heading2" style="color:#11C1F3;font-weight:300;text-align:center;">Categorias</h2>
+    <div id="marketPlace-button-bar2" class="button-bar">
+      <a ui-sref="menu.devOps()" id="marketPlace-button48" class="button button-calm button-block button-outline">DevOps</a>
+      <a ui-sref="menu.cloud()" id="marketPlace-button47" class="button button-calm button-block button-outline">Cloud</a>
+      <a ui-sref="menu.artificialIntelligence()" id="marketPlace-button45" class="button button-calm button-block button-outline">A.I</a>
+    </div>
+    <div id="marketPlace-button-bar3" class="button-bar">
+      <a ui-sref="menu.applications()" id="marketPlace-button46" class="button button-calm button-block button-outline">Aplicações</a>
+      <button id="marketPlace-button44" class="button button-calm button-block button-outline">Ref. Industria</button>
+      <button id="marketPlace-button49" class="button button-calm button-block button-outline">Aceleradores</button>
+    </div>
+  </ion-content>
+</ion-view>

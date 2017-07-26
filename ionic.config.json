@@ -1,0 +1,8 @@
+{
+  "name": "AppAccenture",
+  "app_id": "f33d6f81",
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*"
+  ]
+}
