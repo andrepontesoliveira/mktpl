@@ -2,7 +2,7 @@
   <ion-content padding="true" class="has-header">
     <h4 id="marketPlace-heading15" ng-if="autenticated()" style="color:#7C7C7C;text-align:center;">Seja bem vindo, {{userData.name}}</h4>
     <ion-item class="item-left">
-
+     <!-- <h4 ng-repeat="lists in list">{{lists}}</h4>-->
       <img style="width:50%;" src="https://www.accenture.com/t20170325T025930__w__/us-en/_acnmedia/Accenture/Dev/ComponentImages/logo-accenture.svg">
       <a ui-sref="menu.login()">
         <button class="button button-calm item-right button-outline" style="float:right;margin-top:08%" ng-if="!autenticated()">Login</button>
@@ -31,12 +31,10 @@
         </div>
       </ion-slide-page>
     </ion-slides>
-    <div class="spacer" style="width: 300px; height: 7px;"></div>
+    <div class="spacer"  style="width: 300px; height: 7px;"></div>
     <h2 id="marketPlace-heading2" style="color:#11C1F3;font-weight:300;text-align:center;">Categorias</h2>
     <div id="marketPlace-button-bar2" class="button-bar">
-      <a ui-sref="menu.devOps()" id="marketPlace-button48" class="button button-calm button-block button-outline">DevOps</a>
-      <a ui-sref="menu.cloud()" id="marketPlace-button47" class="button button-calm button-block button-outline">Cloud</a>
-      <a ui-sref="menu.artificialIntelligence()" id="marketPlace-button45" class="button button-calm button-block button-outline">A.I</a>
+      <a id="marketPlace-button48" ng-repeat="lists in list" ui-sref="{{lists.link}}" class="button button-calm button-block button-outline">{{lists.nome}}</a>
     </div>
     <div id="marketPlace-button-bar3" class="button-bar">
       <a ui-sref="menu.applications()" id="marketPlace-button46" class="button button-calm button-block button-outline">Aplicações</a>
