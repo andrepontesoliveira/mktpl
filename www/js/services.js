@@ -4,7 +4,7 @@ angular.module('app.services', [])
    return{
      getApi: function() {
        return $http({
-         url: 'https://meuapp-6e189.firebaseio.com/categoria.json',
+         url: 'https://mktplace-38546.firebaseio.com/categoria.json',
          method: 'GET'
        })
      }
