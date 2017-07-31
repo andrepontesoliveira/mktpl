@@ -165,6 +165,26 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('menu.categorias', {
+    url: '/page18',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/categorias.html',
+        controller: 'categoriasCtrl'
+      }
+    }
+  })
+
+  .state('menu.adicionarCategoria', {
+    url: '/page19',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/adicionarCategoria.html',
+        controller: 'adicionarCategoriaCtrl'
+      }
+    }
+  })
+
 $urlRouterProvider.otherwise('/side-menu21/page3')
 
 
