@@ -19,12 +19,12 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.cart', {
+  .state('menu.orcamento', {
     url: '/page2',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/cart.html',
-        controller: 'cartCtrl'
+        templateUrl: 'templates/orcamento.html',
+        controller: 'orcamentoCtrl'
       }
     }
   })
