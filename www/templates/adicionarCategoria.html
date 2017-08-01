@@ -1,11 +1,11 @@
-<ion-view title="Adicionar Categoria" id="page19">
-  <ion-content padding="true" class="has-header">
+<ion-view title="Adicionar Categoria" id="page19" >
+  <ion-content padding="true" class="has-header" ng-controller="categsController">
     <form id="adicionarCategoria-form4" class="list">
       <label class="item item-input item-stacked-label" id="adicionarCategoria-input8" name="Nome">
         <span class="input-label">Nome:</span>
-        <input type="text" placeholder="DevOps (Example)">
+        <input type="text" name="nome" id="nome" ng-model="nome" placeholder="DevOps (Example)">
       </label>
-    </form>
-    <button id="adicionarCategoria-button52" class="button button-balanced button-block icon-right ion-android-add-circle">Adicionar</button>
+    </form> 
+    <button id="adicionarCategoria-button52" class="button button-balanced button-block icon-right ion-android-add-circle" ng-click="insertCateg(nome)">Adicionar</button>
   </ion-content>
 </ion-view>

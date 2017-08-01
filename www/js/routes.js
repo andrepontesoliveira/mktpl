@@ -29,7 +29,7 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.artificialIntelligence', {
+  .state('menu.AI', {
     url: '/page4',
     views: {
       'side-menu21': {
@@ -39,7 +39,7 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.applications', {
+  .state('menu.Applications', {
     url: '/page8',
     views: {
       'side-menu21': {
@@ -49,7 +49,7 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.cloud', {
+  .state('menu.Cloud', {
     url: '/page6',
     views: {
       'side-menu21': {
@@ -59,7 +59,7 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.devOps', {
+  .state('menu.DevOps', {
     url: '/page5',
     views: {
       'side-menu21': {

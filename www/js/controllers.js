@@ -1,11 +1,4 @@
 angular.module('app.controllers', [])
-  
-.controller('listTest', function ($scope, Api){
-	Api.getApi().then(function(result){
-	$scope.list = result.data;
-	})
-
-})
 
 
 
@@ -13,7 +6,15 @@ angular.module('app.controllers', [])
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, $ionicUser, $state) {
+    $scope.doRefresh = function() {
     
+    console.log('Refreshing!');
+    $timeout( function() {
+
+      //Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+    
+    }, 100)};
     $scope.userData = $ionicUser.details;
 
     
@@ -215,16 +216,91 @@ function ($scope, $stateParams, $ionicAuth, $ionicUser, $state) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
+     
+        
+        
 
+}])
+
+.controller('categsController',['$scope','$state', 'CategdataFactory', 
+        function ($scope,$state ,CategdataFactory) {
+    
+    $scope.nome;
+    $scope.link;
+$scope.doRefresh = function() {
+    getCategs();
+    console.log('Refreshing!');
+    $timeout(function() {
+
+    
+      //Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+    
+    }, 100)};
+    getCategs();
+
+     function getCategs() {
+        CategdataFactory.getCategs()
+             .then(function (response) {
+                 $scope.list = response.data;
+             }, function (error) {
+                 $scope.status = 'Unable to load customer data: ' + error.message;
+             });
+     };
+
+    $scope.updateCustomer = function (id) {
+        
+
+         CategdataFactory.updateCustomer(cust)
+          .then(function (response) {
+              $scope.status = 'Updated Customer! Refreshing customer list.';
+          }, function (error) {
+              $scope.status = 'Unable to update customer: ' + error.message;
+          });
+    };
+
+    $scope.insertCateg = function (nome) {
+        var generatedId = parseInt((Math.random() * 100), 10);
+        var link = "menu."+nome+"()";
+
+               var data ={
+                  nome: nome,
+                  link: link,
+                  id: generatedId};
+       
+            
+        CategdataFactory.insertCateg(data,generatedId)
+            .then(function (response) {
+               $state.go('menu.categorias');
+               getCategs()
+            }, function(error) {
+                $scope.status = 'Unable to insert categorie: ' + error.message;
+                alert($scope.status);
+            });
+    };
+    
+     $scope.deleteCateg = function (id) {
+         
+        
+         CategdataFactory.deleteCateg(id)
+         .then(function (response) {
+             $scope.status = 'Deleted Categ! Refreshing customer list.';
+          alert( $scope.status);
+         }, function (error) {
+             $scope.status = 'Unable to delete categ: ' + error.message;
+           alert( $scope.status);  
+         });
+      };
 
 }])
    
 .controller('adicionarCategoriaCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+function ($scope, $stateParams,) {
 
 
-}])
+
+}]);
  
  

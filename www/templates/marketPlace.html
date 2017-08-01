@@ -1,6 +1,8 @@
 <ion-view title="MarketPlace" id="page3">
-  <ion-content padding="true" class="has-header">
-    <h4 id="marketPlace-heading15" ng-if="autenticated()" style="color:#7C7C7C;text-align:center;">Seja bem vindo, {{userData.name}}</h4>
+  <ion-content padding="true" class="has-header" ng-controller="categsController">
+    <ion-refresher on-refresh="doRefresh()">
+     </ion-refresher>                   
+    <h4 id="marketPlace-heading15" ng-if="autenticated()" style="color:#7C7C7C;text-align:center;" ng-controller="marketPlaceCtrl">Seja bem vindo, {{userData.name}}</h4>
     <ion-item class="item-left">
      <!-- <h4 ng-repeat="lists in list">{{lists}}</h4>-->
       <img style="width:50%;" src="https://www.accenture.com/t20170325T025930__w__/us-en/_acnmedia/Accenture/Dev/ComponentImages/logo-accenture.svg">
@@ -32,6 +34,7 @@
       </ion-slide-page>
     </ion-slides>
     <div class="spacer"  style="width: 300px; height: 7px;"></div>
+    <div>
     <h2 id="marketPlace-heading2" style="color:#11C1F3;font-weight:300;text-align:center;">Categorias</h2>
     <div id="marketPlace-button-bar2" class="button-bar">
       <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index < 3" ui-sref="{{lists.link}}" class="button button-calm button-block button-outline">{{lists.nome}}</a>
@@ -48,6 +51,7 @@
      <div id="marketPlace-button-bar2" class="button-bar">
       <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index > 13 && $index < 17" ui-sref="{{lists.link}}" class="button button-calm button-block button-outline">{{lists.nome}}</a>
     </div>
-    </div>
+    </div> 
+  
   </ion-content>
 </ion-view>
