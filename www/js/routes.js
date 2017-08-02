@@ -29,6 +29,16 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('menu.orcamentosucesso', {
+    url: '/page100',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/orcamentosucesso.html',
+        controller: 'orcamentoCtrl'
+      }
+    }
+  })
+
   .state('menu.AI', {
     url: '/page4',
     views: {
