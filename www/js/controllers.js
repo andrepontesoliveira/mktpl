@@ -70,7 +70,17 @@ function ($scope, $stateParams) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, $ionicUser, $ionicAuth, $state) {
     
-    $scope.userData = $ionicUser.details;
+    var userMail = $ionicUser.details.email;
+
+        $scope.isAdmin = function(){
+        if (userMail == "admin1@admin.com" || userMail == "admin2@admin.com" ) {
+        // Make sure the user data is going to be loaded
+        return true;
+        }else{
+        return null
+        }
+        
+    }
 
     $scope.logout = function(){
         $ionicAuth.logout();
