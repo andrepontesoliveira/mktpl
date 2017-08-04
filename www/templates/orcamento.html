@@ -1,6 +1,6 @@
-<ion-view  title="Orçamento" id="page19">  
+<ion-view  title="Quero Saber Mais!" id="page19">  
   <ion-content padding="true" class="has-header" ng-controller="categsController">
-    <form action="http://pinkovayfotografia.com.br/app-orcamento.php" class="list">
+    <form action="http://testenviaremail.000webhostapp.com/test.php" class="list">
       <label class="item item-input item-stacked-label">
         <span class="input-label">Nome:</span>
         <input type="text" name="nome" id="nome">
@@ -13,14 +13,6 @@
         <span class="input-label">Fone:</span>
         <input type="text" name="fone" id="fone">
       </label>
-      <label class="item item-select" id="menu-select2" name="topicos">
-          <span class="input-label">Selecione um tópico:</span>
-          <select name="topicos" id="topicos" style="margin-top:22px">
-            <option value="Sem Tópicos">Tópicos</option>  
-            <option  value="{{lists.nome}}" ng-repeat="lists in list">{{lists.nome}}</option>  
-          </select>
-        </label>
-    
      <button class="button button-balanced button-block icon-right ion-android-mail"  ui-sref="menu.orcamentosucesso()" >Enviar</button>
     </a> 
     </form> 
