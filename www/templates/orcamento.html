@@ -1,6 +1,6 @@
 <ion-view  title="Quero Saber Mais!" id="page19">  
   <ion-content padding="true" class="has-header" ng-controller="orcamentoController">
-    <form class="list" ng-show="userData.name != Admin 1 || userData.name != Admin 2">
+    <form class="list" ng-show="!isAdmin()">
       <label class="item item-input item-stacked-label">
         <span class="input-label">Nome:</span>
         <input type="text" ng-model="nome" name="nome" id="nome">
@@ -16,7 +16,7 @@
      <button class="button button-balanced button-block icon-right ion-android-mail" ng-click="insertOrcamento(nome, email, fone)">Enviar</button>
     </a> 
     </form> 
-     <ion-item class="item-icon-left balanced" ng-show="userData.name == Admin 1 || userData.name == Admin 2" ng-repeat="orcamentos in orcamento" id="login-list-item4">
+     <ion-item class="item-icon-left balanced" ng-show="isAdmin()" ng-repeat="orcamentos in orcamento" id="login-list-item4">
         <i class="icon ion-android-checkbox"></i><b>Nome:</b> {{orcamentos.nome}}<br>
         <i class="icon ion-android-checkbox"></i><b>E-mail:</b> {{orcamentos.email}}<br>
         <i class="icon ion-android-checkbox"></i><b>Fone:</b> {{orcamentos.fone}}<br>
