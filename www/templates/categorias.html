@@ -1,5 +1,5 @@
-<ion-view title="Categorias" id="page18">
-  <ion-content padding="true" class="has-header" ng-controller="categsController">
+<ion-view title="Categorias" id="page18" cache-view="false">
+  <ion-content padding="true" class="has-header" ng-controller="categsController" ng-init="doRefresh()">
      <ion-refresher on-refresh="doRefresh()">
      </ion-refresher>   
     <a ui-sref="menu.adicionarCategoria()" id="categorias-button50" style="text-align:left;" class="button button-positive button-outline icon-left ion-android-add-circle">Categoria</a>

@@ -1,5 +1,5 @@
 <ion-view title="DevOps" id="page5">
-  <ion-content padding="true" class="has-header">
+  <ion-content padding="true" class="has-header" >
     <ion-item class="item-left">
 
       <img style="width:50%;" src="https://www.accenture.com/t20170325T025930__w__/us-en/_acnmedia/Accenture/Dev/ComponentImages/logo-accenture.svg">
@@ -13,17 +13,18 @@
       </p>
     </div>
     <h2 id="devOps-heading4" style="color:#11C1F3;font-weight:300;text-align:center;">DevOps</h2>
-    <div class="list card" id="devOps-card24">
+    <div ng-controller="ArtigosDevOpsController" >
+    <div class="list card" id="devOps-card24" ng-repeat="artigos in artigoDevops">
       <ion-item class="item-avatar" id="devOps-list-item9">
-        <img src="img/AAEAAQAAAAAAAAeSAAAAJDE5ZmVhOTBlLTU4YzctNDI0NC05NmQ0LTJmYTdiMGJjMzY3Nw.png">
-        <h2>DEVOPS: ARE YOU READY TO SHIFT TO CONTINUOUS DELIVERY?</h2>
+        <img src="{{artigos.icon}}">
+        <h2>{{artigos.Titulo}}</h2>
       </ion-item>
       <div class=" item item-image">
-        <img src="img/accenture-devops-delivering-applications-at-the-pace-of-business-1-638.jpgcb1461167185" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        <img src="{{artigos.image}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
       </div>
       <div class="item item-body">
         <div class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">Deliver applications at the pace of business with comprehensive DevOps services from Accenture.</p>
+          <p style="margin-top:0px;color:#000000;">{{artigos.resumo}}</p>
         </div>
         <br>
       </div>
@@ -55,95 +56,6 @@
 
       </div>
     </div>
-    <div class="list card" id="devOps-card25">
-      <ion-item class="item-avatar" id="devOps-list-item10">
-        <img src="img/Accenture-Nicholas-Gulrajani-headshot.png">
-        <h2>What’s in a name?</h2>
-        <p> Understanding parallel development wi</p>
-      </ion-item>
-      <div class=" item item-image">
-        <img src="img/Accenture-TechLabs-Blog-Acc-Com-187932095-V10-marquee.jpg" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
-      </div>
-      <div class="item item-body">
-        <div class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">
-            DevOps, a leading software engineering trend, makes this shift possible by bringing business, development and operation teams together to streamline IT and applying more automated processes.
-          </p>
-        </div>
-        <br>
-      </div>
-      <a ui-sref="menu.whatSInAName()" id="devOps-button33" class="button button-calm button-outline marger right">Details</a>
-      <div class="creator-container" style="width:70%;margin-top:10px;;margin-left:10px" id="rate-stars">
-
-        <fieldset class="rating">
-          <input type="radio" id="star5" name="rating" value="5" checked="checked">
-          <label class="full" for="star5" title="Awesome - 5 stars"></label>
-          <input type="radio" id="star4half" name="rating" value="4 and a half">
-          <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-          <input type="radio" id="star4" name="rating" value="4">
-          <label class="full" for="star4" title="Pretty good - 4 stars"></label>
-          <input type="radio" id="star3half" name="rating" value="3 and a half">
-          <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-          <input type="radio" id="star3" name="rating" value="3">
-          <label class="full" for="star3" title="Meh - 3 stars"></label>
-          <input type="radio" id="star2half" name="rating" value="2 and a half">
-          <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-          <input type="radio" id="star2" name="rating" value="2">
-          <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-          <input type="radio" id="star1half" name="rating" value="1 and a half">
-          <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-          <input type="radio" id="star1" name="rating" value="1">
-          <label class="full" for="star1" title="Sucks big time - 1 star"></label>
-          <input type="radio" id="starhalf" name="rating" value="half">
-          <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-        </fieldset>
-
-      </div>
-    </div>
-    <div class="list card" id="devOps-card26">
-      <ion-item class="item-avatar" id="devOps-list-item11">
-        <img src="img/Accenture-Martin-Croker.pnglaenh180w180">
-        <h2>MAKING DEVOPS AT SCALE STICK</h2>
-      </ion-item>
-      <div class=" item item-image">
-        <img src="img/Accenture-DevOps-updated.jpg" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
-      </div>
-      <div class="item item-body">
-        <div class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;"></p>After an unsuccessful external search for trainers, we developed our own two-day training course to introduce our people to DevOps principles and technologies. The primary objective was to build a critical mass of people who understand what
-          “good” looks like in DevOps, what delivery entails and what benefits this provides. This process generated a large (and growing) number of people who’ve seen DevOps in operation, can talk knowledgeably about it and recognize the bar for which
-          they’re aiming.
-          <p></p>
-        </div>
-        <br>
-      </div>
-      <a ui-sref="menu.mAKINGDEVOPSATSCALESTICK()" id="devOps-button34" class="button button-calm button-outline marger right">Details</a>
-      <div class="creator-container" style="width:70%;margin-top:10px;;margin-left:10px" id="rate-stars">
-
-        <fieldset class="rating">
-          <input type="radio" id="star5" name="rating" value="5" checked="checked">
-          <label class="full" for="star5" title="Awesome - 5 stars"></label>
-          <input type="radio" id="star4half" name="rating" value="4 and a half">
-          <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-          <input type="radio" id="star4" name="rating" value="4">
-          <label class="full" for="star4" title="Pretty good - 4 stars"></label>
-          <input type="radio" id="star3half" name="rating" value="3 and a half">
-          <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-          <input type="radio" id="star3" name="rating" value="3">
-          <label class="full" for="star3" title="Meh - 3 stars"></label>
-          <input type="radio" id="star2half" name="rating" value="2 and a half">
-          <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-          <input type="radio" id="star2" name="rating" value="2">
-          <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-          <input type="radio" id="star1half" name="rating" value="1 and a half">
-          <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-          <input type="radio" id="star1" name="rating" value="1">
-          <label class="full" for="star1" title="Sucks big time - 1 star"></label>
-          <input type="radio" id="starhalf" name="rating" value="half">
-          <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-        </fieldset>
-
-      </div>
-    </div>
+    </div> 
   </ion-content>
 </ion-view>

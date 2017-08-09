@@ -27,8 +27,24 @@ angular.module('app.services', [])
     return dataFactory;
 }])
 
+ .factory('ArtigosDevOpsdataFactory', ['$http', function($http) {
+
+    var urlBase = 'https://mktplace-38546.firebaseio.com/artigo.json?categ=DevOps';
+    var dataFactory = {};
+
+    dataFactory.getArtigosDevOps = function () {
+        return $http.get(urlBase);
+    };
+
+
+
+    return dataFactory;
+}])
+
+
 .service('CategdataService', ['$http', function ($http) {
   var urlBase = 'https://mktplace-38546.firebaseio.com/categoria.json';
+//   var urlBase2 = 'https://mktplace-38546.firebaseio.com/artigo/';
 
         this.getCategs = function () {
             return $http.get(urlBase);
@@ -39,6 +55,7 @@ angular.module('app.services', [])
         };
 
         this.insertCateg = function (categ,link) {
+            // $http.post(urlBase2 + '/' + categ + '.json');
             return $http.post(urlBase, categ,link);
         };
 

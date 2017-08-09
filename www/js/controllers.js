@@ -6,6 +6,8 @@ angular.module('app.controllers', [])
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, $ionicUser, $state) {
+ 
+
     $scope.doRefresh = function() {
     
     console.log('Refreshing!');
@@ -70,6 +72,17 @@ function ($scope, $stateParams) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, $ionicUser, $ionicAuth, $state) {
     
+    
+    $scope.doRefresh = function() {
+    
+    console.log('Refreshing!');
+    $timeout( function() {
+
+      //Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+    
+    }, 100)};
+    
     var userMail = $ionicUser.details.email;
 
         $scope.isAdmin = function(){
@@ -96,6 +109,8 @@ function ($scope, $stateParams, $ionicUser, $ionicAuth, $state) {
         }
         
     }
+
+ 
 
 }])
    
@@ -232,8 +247,29 @@ function ($scope, $stateParams) {
 
 }])
 
+
+.controller('ArtigosDevOpsController',['$scope','$state', 'ArtigosDevOpsdataFactory', 
+        function ($scope,$state ,ArtigosDevOpsdataFactory) {   
+
+    getArtigosDevOps();
+
+   
+
+     function getArtigosDevOps() {
+        ArtigosDevOpsdataFactory.getArtigosDevOps()
+             .then(function (response) {
+                 $scope.artigoDevops = response.data;
+             }, function (error) {
+                 $scope.status = 'Unable to load customer data: ' + error.message;
+             });
+     };
+
+
+}])
+
+
 .controller('categsController',['$scope','$state', 'CategdataFactory', 
-        function ($scope,$state ,CategdataFactory) {
+        function ($scope,$state ,CategdataFactory) {       
     
     $scope.nome;
     $scope.link;
@@ -301,6 +337,8 @@ $scope.doRefresh = function() {
            alert( $scope.status);  
          });
       };
+
+
 
 }])
    
