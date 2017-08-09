@@ -68,5 +68,21 @@ angular.module('app.services', [])
         };
 
 
+}])
+    
+.factory('OrcamentodataFactory', ['$http', function($http) {
+
+    var urlBase = 'https://mktplace-38546.firebaseio.com/orcamento.json';
+    var dataFactory = {};
+
+    dataFactory.getOrcamento = function () {
+        return $http.get(urlBase);
+    };
+
+    dataFactory.insertOrcamento = function (data) {
+        return $http.post("https://mktplace-38546.firebaseio.com/orcamento.json", data);
+    };
+
+    return dataFactory;
 }]);
  
