@@ -1,20 +1,24 @@
 <ion-view  title="Quero Saber Mais!" id="page19">  
-  <ion-content padding="true" class="has-header" ng-controller="categsController">
-    <form action="http://testenviaremail.000webhostapp.com/test.php" class="list">
+  <ion-content padding="true" class="has-header" ng-controller="orcamentoController">
+    <form class="list" ng-show="userData.name != Admin 1 || userData.name != Admin 2">
       <label class="item item-input item-stacked-label">
         <span class="input-label">Nome:</span>
-        <input type="text" name="nome" id="nome">
+        <input type="text" ng-model="nome" name="nome" id="nome">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">E-mail:</span>
-        <input type="email" name="email" id="email">
+        <input ng-model="email" type="email" name="email" id="email">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Fone:</span>
-        <input type="text" name="fone" id="fone">
+        <input ng-model="fone" type="text" name="fone" id="fone">
       </label>
-     <button class="button button-balanced button-block icon-right ion-android-mail"  ui-sref="menu.orcamentosucesso()" >Enviar</button>
+     <button class="button button-balanced button-block icon-right ion-android-mail" ng-click="insertOrcamento(nome, email, fone)">Enviar</button>
     </a> 
     </form> 
+     <ion-item class="item-icon-left balanced" ng-show="userData.name == Admin 1 || userData.name == Admin 2" ng-repeat="orcamentos in orcamento" id="login-list-item4">
+        <i class="icon ion-android-checkbox"></i><b>Nome:</b> {{orcamentos.nome}}<br>
+        <i class="icon ion-android-checkbox"></i><b>E-mail:</b> {{orcamentos.email}}<br>
+        <i class="icon ion-android-checkbox"></i><b>Fone:</b> {{orcamentos.fone}}<br>
   </ion-content>
 </ion-view>

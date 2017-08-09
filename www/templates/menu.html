@@ -27,9 +27,8 @@
         </div>
       </div>
       <ion-list id="menu-list1">
-        <ion-item class="item-icon-left dark" id="menu-list-item1" ui-sref="menu.categorias()" menu-close="" ng-if="autenticated()" ng-show="isAdmin()" >
+        <ion-item class="item-icon-left dark" id="menu-list-item1" ui-sref="menu.categorias()" menu-close="" ng-show="userData.name == Admin 1 || userData.name == Admin 2">
           <i class="icon ion-ios-book"></i>Categorias</ion-item>
-
         <ion-item class="item-icon-left positive" id="menu-list-item2" ui-sref="menu.marketPlace()" menu-close="">
           <i class="icon ion-information-circled"></i>MarketPlace</ion-item>
         <ion-item class="item-icon-left balanced" id="menu-list-item3" ui-sref="menu.orcamento()" menu-close="">

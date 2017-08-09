@@ -237,7 +237,7 @@ function ($scope, $stateParams) {
     
     $scope.nome;
     $scope.link;
-$scope.doRefresh = function() {
+    $scope.doRefresh = function() {
     getCategs();
     console.log('Refreshing!');
     $timeout(function() {
@@ -312,6 +312,104 @@ function ($scope, $stateParams,) {
 
 
 }])
+
+
+.controller('orcamentoController',['$scope','$state', 'OrcamentodataFactory', 
+        function ($scope,$state,OrcamentodataFactory) {
+    
+    $scope.nome;
+    $scope.email;
+    $scope.fone;
+    $scope.doRefresh = function() {
+        getOrcamento();
+        console.log('Refreshing!');
+        $timeout(function() {
+
+    
+      //Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+    
+    }, 100)};
+    getOrcamento();
+
+     function getOrcamento() {
+        OrcamentodataFactory.getOrcamento()
+             .then(function (response) {
+                 $scope.orcamento = response.data;
+             }, function (error) {
+                 $scope.status = 'Unable to load customer data: ' + error.message;
+             });
+     };
+
+  
+
+    $scope.insertOrcamento = function (nome,email,fone) {
+                  var data ={
+                  nome: nome,
+                  email: email,
+                  fone: fone};
+    
+                  OrcamentodataFactory.insertOrcamento(data)
+            .then(function (response) {
+               $state.go('menu.orcamentosucesso');
+               getOrcamento()
+            }, function(error) {
+                $scope.status = 'Unable to insert categorie: ' + error.message;
+                alert($scope.status);
+            });
+    };
+    
+    
+
+}])
+
+.controller('orcamentoGetController',['$scope','$state', 'OrcamentodataFactory', 
+        function ($scope,$state,OrcamentodataFactory) {
+    
+    $scope.nome;
+    $scope.email;
+    $scope.fone;
+    $scope.doRefresh = function() {
+        getOrcamento();
+        console.log('Refreshing!');
+        $timeout(function() {
+
+    
+      //Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+    
+    }, 100)};
+    getOrcamento();
+
+     function getOrcamento() {
+        OrcamentodataFactory.getOrcamento()
+             .then(function (response) {
+                 $scope.orcamento = response.data;
+             }, function (error) {
+                 $scope.status = 'Unable to load customer data: ' + error.message;
+             });
+     };
+
+    $scope.insertOrcamento = function (nome,email,fone) {
+                  var data ={
+                  nome: nome,
+                  email: email,
+                  fone: fone};
+    
+                  OrcamentodataFactory.insertOrcamento(data)
+            .then(function (response) {
+               $state.go('menu.orcamentosucesso');
+               getOrcamento()
+            }, function(error) {
+                $scope.status = 'Unable to insert categorie: ' + error.message;
+                alert($scope.status);
+            });
+    };
+    
+    
+
+}])
+
 
 .controller('orcamentoCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function

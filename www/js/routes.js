@@ -49,6 +49,17 @@ angular.module('app.routes', [])
     }
   })
 
+  //.state('menu.orcamentoslist', {
+    //url: '/page34',
+    //views: {
+      //'side-menu21': {
+       // templateUrl: 'templates/orcamentoslist.html',
+        //controller: 'orcamentoslistCtrl'
+      //}
+    //}
+  //})
+
+
   .state('menu.Applications', {
     url: '/page8',
     views: {
