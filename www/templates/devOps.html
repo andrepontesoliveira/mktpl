@@ -14,23 +14,23 @@
     </div>
     <h2 id="devOps-heading4" style="color:#11C1F3;font-weight:300;text-align:center;">DevOps</h2>
     <div ng-controller="ArtigosDevOpsController" >
-    <div class="list card" id="devOps-card24" ng-repeat="artigos in artigoDevops">
-      <ion-item class="item-avatar" id="devOps-list-item9">
-        <img src="{{artigos.icon}}">
-        <h2>{{artigos.Titulo}}</h2>
-      </ion-item>
-      <div class=" item item-image">
-        <img src="{{artigos.image}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
-      </div>
-      <div class="item item-body">
-        <div class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">{{artigos.resumo}}</p>
+    <!-- NG REPEAT -->
+      <div class="list card" id="devOps-card24" ng-repeat="artigos in artigoDevops">
+        <ion-item class="item-avatar" id="devOps-list-item9">
+          <img src="{{artigos.icon}}">
+          <h2>{{artigos.Titulo}}</h2>
+        </ion-item>
+        <div class=" item item-image">
+          <img src="{{artigos.image}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
         </div>
-        <br>
-      </div>
-      <a ui-sref="menu.dEVOPSAREYOUREADYTOSHIFTTOCONTINUOUSDELIVERY()" id="devOps-button32" class="button button-calm button-outline marger right">Details</a>
-      <div class="creator-container" style="width:70%;margin-top:10px;;margin-left:10px" id="rate-stars">
-
+        <div class="item item-body">
+          <div class="show-list-numbers-and-dots">
+            <p style="margin-top:0px;color:#000000;">{{artigos.resumo}}</p>
+          </div>
+          <br>
+        </div>
+        <a ui-sref="menu.dEVOPSAREYOUREADYTOSHIFTTOCONTINUOUSDELIVERY()" id="devOps-button32" class="button button-calm button-outline marger right">Details</a>
+        <div class="creator-container" style="width:70%;margin-top:10px;;margin-left:10px" id="rate-stars">
         <fieldset class="rating">
           <input type="radio" id="star5" name="rating" value="5" checked="checked">
           <label class="full" for="star5" title="Awesome - 5 stars"></label>
@@ -53,9 +53,9 @@
           <input type="radio" id="starhalf" name="rating" value="half">
           <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
         </fieldset>
-
       </div>
     </div>
+    <!-- NG REPEAT -->
     </div> 
   </ion-content>
 </ion-view>

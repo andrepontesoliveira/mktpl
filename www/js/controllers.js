@@ -1,6 +1,104 @@
 angular.module('app.controllers', [])
 
+.controller('ArtigoCtrl', function ArtigoCtrl($scope, $location, $firebase, $firebaseArray) {
+	
+	// var config = {
+	// 	apiKey: "AIzaSyCEsHKoEycSk4zFVH2bUIKEVPLmRNRGsl8",
+	// 	authDomain: "mktplace-38546.firebaseapp.com",
+	// 	databaseURL: "https://mktplace-38546.firebaseio.com",
+	// 	storageBucket: "mktplace-38546.appspot.com",
+	// };
+	// firebase.initializeApp(config);
+  
+	var artigoRef = firebase.database().ref('/artigo');
+	$scope.editando = false;
+	$scope.artigos = $firebaseArray(artigoRef);
+	$scope.novoArtigo = null;
+	$scope.key = null;
+	$scope.categoria = null;
+	$scope.artigoConsultado = null;
+	inicializarArtigo();
 
+
+	$scope.$watch('artigos', function(){
+		var total = 0;
+		var remaining = 0;
+		$scope.artigos.forEach(function(artigo){
+			total++;
+			if (artigo.completed === false) {
+				remaining++;
+			}
+		});
+		$scope.totalCount = total;
+	}, true);
+
+	$scope.addArtigo = function(){
+
+		if ($scope.novoArtigo.Titulo === "") {
+			alert('Informe um título');
+			return;
+		}
+		var generatedId = parseInt((Math.random() * 100), 10);
+		// push to firebase
+		artigoRef.child(generatedId).set($scope.novoArtigo);
+		$scope.novoArtigo = '';
+	};
+
+	$scope.editarArtigo = function(artigo){
+		$scope.editando = true;
+		$scope.novoArtigo = artigo;
+	};
+
+	// update artigo for changes we made
+	$scope.salvarArtigo = function(){
+		$scope.artigos.$save($scope.novoArtigo);
+		inicializarArtigo();
+	};
+
+	$scope.removeArtigo = function(artigo){
+		$scope.artigos.$remove(artigo);
+	};
+	
+	$scope.cancelar = function(artigo){
+		inicializarArtigo();
+		$scope.editando = false;
+	};
+	
+	$scope.consultar = function(){
+		$scope.artigoConsultado = $scope.artigos.$getRecord($scope.key);
+	};
+	
+	$scope.consultarPorCategoria = function(){
+		var privateTodosRef = artigoRef.orderByChild("categ").equalTo(parseInt($scope.categoria));
+		var privateTodos;
+
+		privateTodosRef.on("value", function(response) {
+		  $scope.artigoConsultado = response.val();
+		});
+		$scope.artigos = $firebaseArray(privateTodosRef);
+	};
+	
+	$scope.limparFiltro = function(){
+		$scope.categoria = null;
+		$scope.artigos = $firebaseArray(artigoRef);
+	};
+	
+	
+	function inicializarArtigo() {
+		$scope.novoArtigo = {
+			"Titulo" : "",
+			"categ" : null,
+			"completeText" : "",
+			"icon" : "",
+			"id" : null,
+			"image" : "",
+			"resumo" : ""
+		};
+	};
+
+
+
+})
 
 .controller('marketPlaceCtrl', ['$scope', '$stateParams', '$ionicUser', '$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
@@ -36,6 +134,14 @@ function ($scope, $stateParams) {
 }])
    
 .controller('artificialIntelligenceCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+
+}])
+
+.controller('criarartigoCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {

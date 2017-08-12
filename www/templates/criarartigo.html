@@ -1,0 +1,38 @@
+<ion-view title="Adicionar Artigo" id="page232">
+  <ion-content padding="true" ng-controller="ArtigoCtrl" class="has-header">
+    <form id="adicionarArtigo-form5" class="list">
+      <label class="item item-input" id="adicionarArtigo-input10">
+        <span class="input-label">Titulo:</span>
+        <input type="text" ng-model="novoArtigo.Titulo" placeholder="">
+      </label>
+      <label class="item item-select" id="adicionarArtigo-select1">
+        <span class="input-label">Categorias:</span>
+        <select ng-controller="categsController" ng-model="novoArtigo.categ" >
+           <option value="">Adicione uma Categoria</option>
+          <option ng-repeat="lists in list" value="{{lists.nome}}">{{lists.nome}}</option>
+        </select>
+      </label>
+      <label class="item item-input" id="adicionarArtigo-input10">
+        <span class="input-label">Texto do Artigo:</span>
+        <input type="text" ng-model="novoArtigo.completeText" style="height: 100px;" ng-model="novoArtigo.Titulo" placeholder="">
+      </label>
+      <label class="item item-input" id="adicionarArtigo-input10">
+        <span class="input-label">ID do Artigo:</span>
+        <input type="text" ng-model="novoArtigo.id" ng-model="novoArtigo.Titulo" placeholder="">
+      </label>
+      <label class="item item-input" id="adicionarArtigo-input10">
+        <span class="input-label">URL do Ícone:</span>
+        <input type="text"  ng-model="novoArtigo.icon" placeholder="">
+      </label>
+      <label class="item item-input" id="adicionarArtigo-input10">
+        <span class="input-label">URL da Imagem:</span>
+        <input type="text" ng-model="novoArtigo.image" placeholder="">
+      </label>
+      <label class="item item-input" id="adicionarArtigo-input10">
+        <span class="input-label">Resumo do Artigo:</span>
+        <input type="text" style="height: 50px;" ng-model="novoArtigo.resumo" placeholder="">
+      </label>
+      <button id="adicionarArtigo-button56" class="button button-balanced button-block" ng-click="addArtigo()">Adicionar Artigo</button>
+    </form>
+  </ion-content>
+</ion-view>

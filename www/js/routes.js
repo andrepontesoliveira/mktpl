@@ -18,6 +18,17 @@ angular.module('app.routes', [])
       }
     }
   })
+ //ARTIGO PAGE
+  .state('menu.criarartigo', {
+    url: '/page232',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/criarartigo.html',
+        controller: 'criarartigoCtrl'
+      }
+    }
+  })
+  //ARTIGO PAGE
 
   .state('menu.orcamento', {
     url: '/page2',

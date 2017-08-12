@@ -1,0 +1,13 @@
+[debug] [2017-08-06T23:05:17.560Z] ----------------------------------------------------------------------
+[debug] [2017-08-06T23:05:17.563Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\m.dos.santos.silva\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase login
+[debug] [2017-08-06T23:05:17.563Z] CLI Version:   3.9.2
+[debug] [2017-08-06T23:05:17.563Z] Platform:      win32
+[debug] [2017-08-06T23:05:17.563Z] Node Version:  v6.11.2
+[debug] [2017-08-06T23:05:17.564Z] Time:          Sun Aug 06 2017 20:05:17 GMT-0300 (SA Eastern Standard Time)
+[debug] [2017-08-06T23:05:17.564Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=420191225&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
