@@ -37,7 +37,10 @@ angular.module('app.controllers', ['firebase'])
 		if ($scope.novoArtigo.Titulo === "") {
 			alert('Informe um título');
 			return;
-		}
+        }
+        
+        $scope.novoArtigo.categ = parseInt($scope.novoArtigo.categ);
+
 		var generatedId = parseInt((Math.random() * 100), 10);
 		// push to firebase
 		artigoRef.child(generatedId).set($scope.novoArtigo);
@@ -182,6 +185,7 @@ function ($scope, $stateParams) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, $ionicUser, $ionicAuth, $state) {
     
+
     
     $scope.doRefresh = function() {
     
@@ -205,9 +209,13 @@ function ($scope, $stateParams, $ionicUser, $ionicAuth, $state) {
         
     }
 
+
+
     $scope.logout = function(){
         $ionicAuth.logout();
+        
         $state.go('menu.login');
+        
     }
     
     $scope.autenticated = function(){
@@ -491,11 +499,14 @@ function ($scope, $stateParams) {
 
   
 
-    $scope.insertOrcamento = function (nome,email,fone) {
+    $scope.insertOrcamento = function (nome,email,fone,servint,status) {
                   var data ={
                   nome: nome,
                   email: email,
-                  fone: fone};
+                  fone: fone,
+                  servint: servint,
+                  status: status
+                };
     
                   OrcamentodataFactory.insertOrcamento(data)
             .then(function (response) {

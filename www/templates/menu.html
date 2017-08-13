@@ -33,8 +33,8 @@
           <i class="icon ion-ios-book"></i>Categorias</ion-item>
         <ion-item class="item-icon-left positive" id="menu-list-item2" ui-sref="menu.marketPlace()" menu-close="">
           <i class="icon ion-information-circled"></i>MarketPlace</ion-item>
-        <ion-item class="item-icon-left balanced" id="menu-list-item3" ui-sref="menu.orcamento()" menu-close="">
-          <i class="icon ion-clipboard" ng-if="autenticated()"></i>Quero Saber Mais!</ion-item>
+        <ion-item ng-if="isAdmin()" class="item-icon-left balanced" id="menu-list-item3" ui-sref="menu.orcamento()" menu-close="">
+          <i class="icon ion-clipboard"  ></i> Contratações</ion-item>
         <ion-item class="item-icon-left assertive" id="menu-list-item4" ng-click="logout()" ng-if="autenticated()">
           <i class="icon ion-log-out"></i>Logout</ion-item>
       </ion-list>
