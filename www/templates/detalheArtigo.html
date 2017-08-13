@@ -1,0 +1,9 @@
+<ion-view title="Artigo" id="detalharArtigo" cache-view="false">
+  <ion-content padding="true" class="has-header" ng-controller="detalheArtigoCtrl" >
+     <ion-refresher on-refresh="doRefresh()">
+     </ion-refresher>   
+    
+    <div class="spacer" style="width: 300px; height: 11px;"></div>
+      Artigo: {{artigo.id}} - {{artigo.Titulo}}
+  </ion-content>
+</ion-view>

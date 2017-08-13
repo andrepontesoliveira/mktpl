@@ -1,0 +1,17 @@
+<ion-view title="Categorias" id="categoria" cache-view="false">
+  <ion-content padding="true" class="has-header" ng-controller="exibeCategoriaCtrl" >
+     <ion-refresher on-refresh="doRefresh()">
+     </ion-refresher>   
+    
+    <div class="spacer" style="width: 300px; height: 11px;"></div>
+    <ion-list id="categorias-list4">
+      <ion-item class="item-icon-left balanced" id="categorias-list-item25" ng-repeat="item in listaArtigos" >
+        {{item.Titulo}}
+        </br>
+        {{item.completeText}}
+        </br>
+        <button ion-button ng-click="detalharArtigo(item.$id)">Detalhar</button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

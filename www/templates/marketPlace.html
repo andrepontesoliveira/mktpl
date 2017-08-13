@@ -37,19 +37,24 @@
     <div>
     <h2 id="marketPlace-heading2" style="color:#11C1F3;font-weight:300;text-align:center;">Categorias</h2>
     <div id="marketPlace-button-bar2" class="button-bar">
-      <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index < 3" ui-sref="{{lists.link}}" class="button button-calm button-block button-outline">{{lists.nome}}</a>
+      <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index < 3" 
+        ng-click="exibeCategoria(lists.id)"  class="button button-calm button-block button-outline">{{lists.nome}}</a>
     </div>
     <div id="marketPlace-button-bar2" class="button-bar">
-      <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index > 2 && $index < 6" ui-sref="{{lists.link}}" class="button button-calm button-block button-outline">{{lists.nome}}</a>
+      <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index > 2 && $index < 6" 
+        ng-click="exibeCategoria(lists.id)" class="button button-calm button-block button-outline">{{lists.nome}}</a>
     </div>
     <div id="marketPlace-button-bar2" class="button-bar">
-      <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index > 5 && $index < 9" ui-sref="{{lists.link}}" class="button button-calm button-block button-outline">{{lists.nome}}</a>
+      <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index > 5 && $index < 9" 
+        ng-click="exibeCategoria(lists.id)" class="button button-calm button-block button-outline">{{lists.nome}}</a>
     </div>
     <div id="marketPlace-button-bar2" class="button-bar">
-      <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index > 9 && $index < 13" ui-sref="{{lists.link}}" class="button button-calm button-block button-outline">{{lists.nome}}</a>
+      <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index > 9 && $index < 13" 
+        ng-click="exibeCategoria(lists.id)" class="button button-calm button-block button-outline">{{lists.nome}}</a>
     </div>
      <div id="marketPlace-button-bar2" class="button-bar">
-      <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index > 13 && $index < 17" ui-sref="{{lists.link}}" class="button button-calm button-block button-outline">{{lists.nome}}</a>
+      <a id="marketPlace-button48" ng-repeat="lists in list" ng-if="$index > 13 && $index < 17" 
+        ng-click="exibeCategoria(lists.id)" class="button button-calm button-block button-outline">{{lists.nome}}</a>
     </div>
     </div> 
   

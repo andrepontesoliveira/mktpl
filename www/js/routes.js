@@ -9,7 +9,7 @@ angular.module('app.routes', [])
   $stateProvider
     
 
-      .state('menu.marketPlace', {
+  .state('menu.marketPlace', {
     url: '/page3',
     views: {
       'side-menu21': {
@@ -215,6 +215,28 @@ angular.module('app.routes', [])
         controller: 'adicionarCategoriaCtrl'
       }
     }
+  })
+
+  .state('menu.exibeCategoria', {
+    url: '/categoria',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/exibeCategoria.html',
+        controller: 'exibeCategoriaCtrl'
+      }
+    },
+    params: {idCategoria: null}
+  })
+
+  .state('menu.detalheArtigo', {
+    url: '/detalheArtigo',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/detalheArtigo.html',
+        controller: 'detalheArtigoCtrl'
+      }
+    },
+    params: {idArtigo: null}
   })
 
 $urlRouterProvider.otherwise('/side-menu21/page3')

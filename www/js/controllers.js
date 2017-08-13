@@ -1,4 +1,4 @@
-angular.module('app.controllers', [])
+angular.module('app.controllers', ['firebase'])
 
 .controller('ArtigoCtrl', function ArtigoCtrl($scope, $location, $firebase, $firebaseArray) {
 	
@@ -117,6 +117,9 @@ function ($scope, $stateParams, $ionicUser, $state) {
     }, 100)};
     $scope.userData = $ionicUser.details;
 
+    $scope.exibeCategoria = function(id){
+        $state.go('menu.exibeCategoria', {idCategoria: id});
+    }
     
     
 }
@@ -170,6 +173,7 @@ function ($scope, $stateParams) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
 
+    alert($stateParams);
 
 }])
    
@@ -413,7 +417,7 @@ function ($scope, $stateParams) {
 
     $scope.insertCateg = function (nome) {
         var generatedId = parseInt((Math.random() * 100), 10);
-        var link = "menu."+nome+"()";
+        var link = "menu."+nome+"(generatedId)";
 
                var data ={
                   nome: nome,
@@ -451,7 +455,7 @@ function ($scope, $stateParams) {
 .controller('adicionarCategoriaCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams,) {
+function ($scope, $stateParams) {
 
 
 
@@ -562,6 +566,78 @@ function ($scope, $stateParams,) {
 
 
 
-}]);
+}])
+
+.controller('exibeCategoriaCtrl', ['$scope', '$state', '$stateParams', 'firebase', '$firebaseArray','$timeout',  // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+    function ($scope, $state, $stateParams, firebase, $firebaseArray, $timeout) {
+
+        var artigoRef = firebase.database().ref('/artigo');
+
+        $scope.initialForm = function () {
+            $scope.consultaArtigos($stateParams.idCategoria);
+            
+        };
+    
+        $scope.doRefresh = function() {
+            
+            $timeout( function() {
+                $scope.consultaArtigos($stateParams.idCategoria);
+                //Stop the ion-refresher from spinning
+                $scope.$broadcast('scroll.refreshComplete');
+        
+            }, 100)
+        };
+
+        $scope.consultaArtigos = function(idCategoria){
+            var privateTodosRef = artigoRef.orderByChild("categ").equalTo(idCategoria);
+            var privateTodos;
+
+            $scope.listaArtigos = $firebaseArray(privateTodosRef);
+        };
+        
+        $scope.detalharArtigo = function(id){
+            $state.go('menu.detalheArtigo', {idArtigo: id});
+        };
+
+        $scope.initialForm();   
+
+    }]
+)
+
+.controller('detalheArtigoCtrl', ['$scope', '$stateParams', 'firebase', '$firebaseArray','$timeout',  // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+
+    function ($scope, $stateParams, firebase, $firebaseArray, $timeout) {
+
+        var ref = firebase.database().ref('/artigo');
+
+        $scope.initialForm = function () {
+            $scope.detalharArtigo($stateParams.idArtigo);
+            
+        };
+    
+        $scope.doRefresh = function() {
+            
+            $timeout( function() {
+                $scope.detalharArtigo($stateParams.idArtigo);
+                //Stop the ion-refresher from spinning
+                $scope.$broadcast('scroll.refreshComplete');
+        
+            }, 100)
+        };
+
+        $scope.detalharArtigo = function(idArtigo){
+            $scope.lista = $firebaseArray(ref);
+
+            $scope.lista.$loaded().then(function(lista) {
+                $scope.artigo = lista.$getRecord(parseInt(idArtigo));
+            });
+
+        };
+
+        $scope.initialForm();   
+
+    }]
+)
+;
  
  
