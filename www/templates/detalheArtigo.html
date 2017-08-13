@@ -1,9 +1,83 @@
 <ion-view title="Artigo" id="detalharArtigo" cache-view="false">
   <ion-content padding="true" class="has-header" ng-controller="detalheArtigoCtrl" >
      <ion-refresher on-refresh="doRefresh()">
-     </ion-refresher>   
-    
+     </ion-refresher> 
+     
+         <div>
+      <ion-item class="item-left">
+
+        <img style="width:50%;" src="https://www.accenture.com/t20170325T025930__w__/us-en/_acnmedia/Accenture/Dev/ComponentImages/logo-accenture.svg">
+        <a ui-sref="menu.login()">
+          <button class="button button-calm item-right button-outline" style="float:right;margin-top:08%" ng-if="!autenticated()">Login</button>
+        </a>
+      </ion-item>
+      <br>
+    </div>
+    <div id="markdown21" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>
+          {{artigo.Titulo}}</strong>
+      </p>
+    </div>
+    <div>
+      <img src="{{artigo.image}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+     <a id="devOps-button32" class="button button-calm button-outline marger right" ui-sref="menu.orcamento()"> <i class="icon ion-clipboard"></i> Quero Saber Mais</a>
+    <br><br>
+    <div class="spacer" style="width: 300px; height: 24px;"></div>
+    <div id="aREFEDERALAGENCIESCLOUDREADY-container11">
+      <div id="aREFEDERALAGENCIESCLOUDREADY-markdown22" class="show-list-numbers-and-dots">
+        <hr>
+      </div>
+    </div>
+    <div id="aREFEDERALAGENCIESCLOUDREADY-markdown23" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">{{artigo.completeText}}</p>
+    </div>
+    <div class="creator-container" style="width:70%;" id="rate-stars">
+      <p>Avaliar:</p>
+      <fieldset class="rating">
+        <input type="radio" id="star5" name="rating" value="5">
+        <label class="full" for="star5" title="Awesome - 5 stars"></label>
+        <input type="radio" id="star4half" name="rating" value="4 and a half">
+        <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+        <input type="radio" id="star4" name="rating" value="4">
+        <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+        <input type="radio" id="star3half" name="rating" value="3 and a half">
+        <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+        <input type="radio" id="star3" name="rating" value="3">
+        <label class="full" for="star3" title="Meh - 3 stars"></label>
+        <input type="radio" id="star2half" name="rating" value="2 and a half">
+        <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+        <input type="radio" id="star2" name="rating" value="2">
+        <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+        <input type="radio" id="star1half" name="rating" value="1 and a half">
+        <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+        <input type="radio" id="star1" name="rating" value="1">
+        <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+        <input type="radio" id="starhalf" name="rating" value="half">
+        <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+      </fieldset>
+
+    </div>
+    <div class="spacer" style="width: 300px; height: 28px;"></div>
+    <div id="container12">
+      <h4 style="color:#000000;">Notas e Comentários:</h4>
+      <div  class="show-list-numbers-and-dots">
+        <p style="color:#000000;">
+          <strong>Muito bom</strong>
+          <br>Some friendly coment.</p>
+      </div>
+      <hr>
+      <div id="aREFEDERALAGENCIESCLOUDREADY-markdown25" class="show-list-numbers-and-dots">
+        <p style="color:#000000;">
+          <strong>Ótimo</strong>
+          <br>Some friendly coment.</p>
+      </div>
+    </div>
+     
+<!--     
     <div class="spacer" style="width: 300px; height: 11px;"></div>
-      Artigo: {{artigo.id}} - {{artigo.Titulo}}
+      Artigo: {{artigo.id}} - {{artigo.Titulo}} -->
+      
   </ion-content>
 </ion-view>

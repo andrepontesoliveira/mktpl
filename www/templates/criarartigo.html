@@ -9,7 +9,7 @@
         <span class="input-label">Categorias:</span>
         <select ng-controller="categsController" ng-model="novoArtigo.categ" >
            <option value="">Adicione uma Categoria</option>
-          <option ng-repeat="lists in list" value="{{lists.nome}}">{{lists.nome}}</option>
+          <option ng-repeat="lists in list" value="{{lists.id}}">{{lists.nome}} </option>
         </select>
       </label>
       <label class="item item-input" id="adicionarArtigo-input10">

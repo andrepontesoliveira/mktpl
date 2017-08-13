@@ -5,13 +5,46 @@
     
     <div class="spacer" style="width: 300px; height: 11px;"></div>
     <ion-list id="categorias-list4">
-      <ion-item class="item-icon-left balanced" id="categorias-list-item25" ng-repeat="item in listaArtigos" >
-        {{item.Titulo}}
-        </br>
-        {{item.completeText}}
-        </br>
-        <button ion-button ng-click="detalharArtigo(item.$id)">Detalhar</button>
-      </ion-item>
+                 <div class="list card" id="devOps-card24" ng-repeat="item in listaArtigos">
+        <ion-item class="item-avatar" id="devOps-list-item9">
+          <img src="{{item.icon}}">
+          <h2>{{item.Titulo}}</h2>
+        </ion-item>
+        <div class=" item item-image">
+          <img src="{{item.image}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+        <div class="item item-body">
+          <div class="show-list-numbers-and-dots">
+            <p style="margin-top:0px;color:#000000;">{{item.resumo}}</p>
+          </div>
+          <br>
+        </div>
+        <a ng-click="detalharArtigo(item.$id)" id="devOps-button32" class="button button-calm button-outline marger right">Details</a>
+        <div class="creator-container" style="width:70%;margin-top:10px;;margin-left:10px" id="rate-stars">
+        <fieldset class="rating">
+          <input type="radio" id="star5" name="rating" value="5" checked="checked">
+          <label class="full" for="star5" title="Awesome - 5 stars"></label>
+          <input type="radio" id="star4half" name="rating" value="4 and a half">
+          <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+          <input type="radio" id="star4" name="rating" value="4">
+          <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+          <input type="radio" id="star3half" name="rating" value="3 and a half">
+          <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+          <input type="radio" id="star3" name="rating" value="3">
+          <label class="full" for="star3" title="Meh - 3 stars"></label>
+          <input type="radio" id="star2half" name="rating" value="2 and a half">
+          <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+          <input type="radio" id="star2" name="rating" value="2">
+          <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+          <input type="radio" id="star1half" name="rating" value="1 and a half">
+          <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+          <input type="radio" id="star1" name="rating" value="1">
+          <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+          <input type="radio" id="starhalf" name="rating" value="half">
+          <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+        </fieldset>
+      </div>
+    </div>
     </ion-list>
   </ion-content>
 </ion-view>
