@@ -17,12 +17,17 @@
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Serviço de interesse:</span>
-        <input ng-model="servint" type="text" name="servint" id="servint">
+        <br/>
+        {{servInt}}
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Valor:</span>
+        <br/>
+        {{valores}}
       </label>
 
-        <input ng-model="status" type="hidden" value="contatar" name="status" id="status">
 
-     <button class="button button-balanced button-block icon-right ion-android-mail" ng-click="insertOrcamento(nome, email, fone,servint,status)">Enviar</button>
+     <button class="button button-balanced button-block icon-right ion-android-mail" ng-click="insertOrcamento(nome, email, fone,'{{servInt}}','{{valores}}')">Enviar</button>
     </a> 
     </form> 
      <ion-item class="item-icon-left balanced" ng-show="isAdmin()" ng-repeat="orcamentos in orcamento" id="login-list-item4">
@@ -32,7 +37,7 @@
       <i class="icon ion-android-checkbox"></i><b>Nome:</b> {{orcamentos.nome}}<br>
         <i class="icon ion-android-checkbox"></i><b>E-mail:</b> {{orcamentos.email}}<br>
         <i class="icon ion-android-checkbox"></i><b>Fone:</b> {{orcamentos.fone}}<br>
-        <i class="icon ion-android-checkbox"></i><b>Serviço de interesse:</b> {{orcamentos.servint}}<br>
+        <i class="icon ion-android-checkbox"></i><b>Serviço de interesse:</b> {{orcamentos.servInt}}<br>
         <i class="icon ion-android-checkbox"></i><b>Status:</b> {{orcamentos.status}}<br>
         <i class="icon ion-android-checkbox"></i><b>Novo Status:</b><input style="    background-color: darkgray;border-radius: 5px;" ng-model="status" type="text" name="status" id="status"><br>
         

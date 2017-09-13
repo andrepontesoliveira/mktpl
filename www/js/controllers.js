@@ -94,7 +94,8 @@ angular.module('app.controllers', ['firebase'])
 			"completeText" : "",
 			"icon" : "",
 			"id" : null,
-			"image" : "",
+            "image" : "",
+            "valor" : "",
 			"resumo" : ""
 		};
 	};
@@ -533,9 +534,14 @@ function ($scope, $stateParams) {
             });
     };
     
+    var dtservInt = localStorage['titulo'] ;
+    var dtvalores = localStorage["valor"] ;
 
-    $scope.insertOrcamento = function (nome,email,fone,servint,status) {
+    $scope.servInt = dtservInt ;
+     $scope.valores = dtvalores ;
 
+    $scope.insertOrcamento = function (nome,email,fone,servInt,valores) {
+        var status = "Pendente";
           var uid = guid();
 
 
@@ -544,10 +550,12 @@ function ($scope, $stateParams) {
                   nome: nome,
                   email: email,
                   fone: fone,
-                  servint: servint,
-                  status: status
+                  valor:valores,
+                  servInt: servInt,
+                  status: status 
                 };
     
+         if (confirm("Confirma a compra?")){       
                   OrcamentodataFactory.insertOrcamento(data,uid)
             .then(function (response) {
                $state.go('menu.orcamentosucesso');
@@ -556,6 +564,7 @@ function ($scope, $stateParams) {
                 $scope.status = 'Unable to insert categorie: ' + error.message;
                 alert($scope.status);
             });
+         }    
     };
     
     
@@ -589,11 +598,18 @@ function ($scope, $stateParams) {
              });
      };
 
-    $scope.insertOrcamento = function (nome,email,fone) {
-                  var data ={
+
+    alert ($scope.dt.valores);
+
+    $scope.insertOrcamento = function (nome,email,fone,servInt,valores) {
+                var status = "Pendente";  
+                var data ={
                   nome: nome,
                   email: email,
-                  fone: fone};
+                  fone: fone,
+                  valor:valores,
+                  servInt: servInt,
+                  status: status  };
     
                   OrcamentodataFactory.insertOrcamento(data)
             .then(function (response) {
@@ -681,11 +697,16 @@ function ($scope, $stateParams,) {
 
             $scope.lista.$loaded().then(function(lista) {
                 $scope.artigo = lista.$getRecord(parseInt(idArtigo));
+                window.localStorage['titulo']  = $scope.artigo.Titulo;
+                window.localStorage['valor']  = $scope.artigo.valor;                
             });
+            
 
         };
 
         $scope.initialForm();   
+
+
 
     }]
 )
