@@ -1,5 +1,6 @@
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content ng-init="doRefresh()">
+   <body onload="window.location.reload()">
     <ion-nav-bar class="bar-calm">
       <ion-nav-back-button></ion-nav-back-button>
       <ion-nav-buttons side="right">
@@ -39,5 +40,6 @@
           <i class="icon ion-log-out"></i>Logout</ion-item>
       </ion-list>
     </ion-content>
+    </body>
   </ion-side-menu>
 </ion-side-menus>

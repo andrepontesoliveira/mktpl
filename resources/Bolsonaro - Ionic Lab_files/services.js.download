@@ -1,0 +1,62 @@
+angular.module('app.services', [])
+
+.factory('AboutdataFactory', ['$http', function($http) {
+
+    var urlBase = 'https://bolsoapp-ce609.firebaseio.com/About.json';
+    var dataFactory = {};
+
+    dataFactory.getAbout = function () {
+        return $http.get(urlBase);
+    };
+
+
+    return dataFactory;
+}])
+
+.factory('UserdataFactory', ['$http', function($http) {
+    var dataFactory = {};
+
+    dataFactory.insertUser = function (data,cpf) {
+        return $http.put("https://bolsoapp-ce609.firebaseio.com/users/"+ cpf +".json" ,data);
+    };
+
+
+    return dataFactory;
+}])
+
+.factory('GetUserdataFactory', ['$http', function($http) {
+    var dataFactory = {};
+
+    dataFactory.getUsers = function () {
+        return $http.get("https://bolsoapp-ce609.firebaseio.com/users.json");
+    };
+
+     dataFactory.getUser = function (id) {
+        return $http.get("https://bolsoapp-ce609.firebaseio.com/users/"+id+".json");
+    };
+
+    return dataFactory;
+}])
+
+.factory('DoardataFactory', ['$http', function($http) {
+    var dataFactory = {};
+
+    dataFactory.insertDoa = function (data,generatedId) {
+        return $http.put("https://bolsoapp-ce609.firebaseio.com/Doacoes/" + generatedId + ".json" ,data);
+    };
+
+    return dataFactory;
+}])
+
+.factory('DoacoesdataFactory', ['$http', function($http) {
+
+    var urlBase = 'https://bolsoapp-ce609.firebaseio.com/Doacoes.json';
+    var dataFactory = {};
+
+    dataFactory.getDoacoes = function () {
+        return $http.get(urlBase);
+    };
+
+
+    return dataFactory;
+}])

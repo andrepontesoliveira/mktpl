@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- saved from url=(0121)http://localhost:8100/?ionicplatform=android&http://localhost:8100/ionic-lab&http://localhost:8100/ionic-lab#/page1/page4 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Doações</title>
+
+    
+          <!-- firebase & angularfire libraries -->
+      <script src="./cb=gapi.loaded_0" async=""></script><script src="./firebase.js.download"></script>
+      <script src="./angularfire.min.js.download"></script>
+    <script src="./ionic.bundle.js.download"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="./cordova.js.download"></script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <link href="./ionic.app.css" rel="stylesheet">
+
+    <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px; 
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+      }
+      .show-list-numbers-and-dots ul{
+        list-style-type: disc;
+        padding-left:40px;
+      }
+      .show-list-numbers-and-dots ol{
+        list-style-type: decimal;
+        padding-left:40px;
+      }
+    </style>
+
+    <script src="./app.js.download"></script>
+    <script src="./controllers.js.download"></script>
+    <script src="./routes.js.download"></script>
+    
+    <script src="./directives.js.download"></script>
+    <script src="./services.js.download"></script>
+    <script src="./ionic.cloud.min.js.download"></script>
+    <script src="./ionic.cloud.init.js.download"></script>
+    <script src="./firebase.js(1).download"></script>
+    <script src="./angularfire.min.js(1).download"></script>
+    <script src="./firebase.init.js.download"></script>
+
+    
+    <script src="./ionicUIRouter.js.download"></script>
+    
+
+    <link href="./style(1).css" rel="stylesheet">
+    <link href="./ionic.css" rel="stylesheet">
+    <script src="./ionic.bundle.js(1).download"></script>
+
+
+  <script type="text/javascript" charset="UTF-8" src="./api.js.download" gapi_processed="true"></script></head>
+  <body ng-app="app" animation="slide-left-right-ios7" class="grade-a platform-browser platform-android platform-ready">
+  <div>
+  <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21" class=" view">
+    <ion-side-menu-content class="menu-content pane">
+      <ion-nav-bar class="bar-stable nav-bar-container nav-bar-tabs-top" nav-bar-transition="android" nav-bar-direction="swap" nav-swipe="">
+        <ion-nav-back-button class="hide"></ion-nav-back-button>
+        <!-- <ion-nav-buttons side="left">
+          <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons> -->
+      <div class="nav-bar-block" nav-bar="cached"><ion-header-bar class="bar-stable bar bar-header" align-title="left"><button ng-click="$ionicGoBack()" class="button back-button hide buttons button-clear header-item" style="opacity: 0;"><i class="icon ion-android-arrow-back"></i> <span class="back-text" style="opacity: 0;"></span></button><div class="title title-left header-item" style="opacity: 0;">Sobre</div></ion-header-bar></div><div class="nav-bar-block" nav-bar="active"><ion-header-bar class="bar-stable bar bar-header" align-title="left"><button ng-click="$ionicGoBack()" class="button back-button hide buttons button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i> <span class="back-text" style=""></span></button><div class="title title-left header-item" style="">Doações</div></ion-header-bar></div></ion-nav-bar>
+      <ion-nav-view class="view-container" nav-view-transition="android" nav-view-direction="none" nav-swipe=""><ion-view id="page7" class="pane" state="login" nav-view="cached" style="transform: translate3d(0%, 0px, 0px); opacity: 0;">
+  <ion-content padding="true" class="scroll-content ionic-scroll overflow-scroll  has-header"><div class="scroll padding">
+    <!-- ngIf: error -->
+    <form id="login-form5" class="list ng-dirty ng-valid-parse ng-valid ng-valid-required ng-submitted" style="">
+      <ion-list id="login-list3" class="disable-user-behavior"><div class="list">
+        <label class="item item-input" id="login-input12">
+          <span class="input-label" aria-label="CPF" id="_label-0">CPF</span>
+          <input type="text" placeholder="" required="" ng-model="data.cpf" class="ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" style="">
+        </label>
+        <label class="item item-input" id="login-input13">
+          <span class="input-label" aria-label="Password" id="_label-1">Password</span>
+          <input type="password" placeholder="" required="" ng-model="data.password" class="ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" style="">
+        </label>
+      </div></ion-list>
+      <div class="spacer" style="width: 300px; height: 22px;"></div>
+      <button id="login-button7" ng-click="loginUser()" class="button button-balanced button-block">Log in</button>
+      <a ui-sref="signup()" id="login-button8" class="button button-positive button-block button-clear" href="http://localhost:8100/?ionicplatform=android&amp;http://localhost:8100/ionic-lab&amp;http://localhost:8100/ionic-lab#/page5">Ou Criar Conta</a>
+    </form>
+  </div></ion-content>
+</ion-view><ion-view id="page1" class="pane" abstract="true" nav-view="active" style="transform: translate3d(0%, 0px, 0px); opacity: 1;">
+  <ion-tabs class="tabs-stable tabs-icon-top tabs-top tabs-striped" id="tabsController-tabs1"><div class="tab-nav tabs">
+    <ion-tab icon="ion-android-contacts" href="#/page1/page2" id="tabsController-tab1"></ion-tab>
+    <ion-tab icon="ion-cash" href="#/page1/page4" id="tabsController-tab2"></ion-tab>
+    <ion-tab icon="ion-ios-cloud" href="#/page1/tab3/page3" id="tabsController-tab3"></ion-tab>
+  <a ng-class="{&#39;has-badge&#39;:badge, &#39;tab-hidden&#39;:isHidden(), &#39;tab-item-active&#39;: isTabActive()}" ng-disabled="disabled()" class="tab-item" icon="ion-android-contacts" style=""><!-- ngIf: badge --><!-- ngIf: getIcon() --><i class="icon ion-android-contacts" ng-if="getIcon()" style=""></i><!-- end ngIf: getIcon() --><span class="tab-title ng-binding" ng-bind-html="title">Sobre</span></a><a ng-class="{&#39;has-badge&#39;:badge, &#39;tab-hidden&#39;:isHidden(), &#39;tab-item-active&#39;: isTabActive()}" ng-disabled="disabled()" class="tab-item tab-item-active" icon="ion-cash" style=""><!-- ngIf: badge --><!-- ngIf: getIcon() --><i class="icon ion-cash" ng-if="getIcon()" style=""></i><!-- end ngIf: getIcon() --><span class="tab-title ng-binding" ng-bind-html="title">Doar</span></a><a ng-class="{&#39;has-badge&#39;:badge, &#39;tab-hidden&#39;:isHidden(), &#39;tab-item-active&#39;: isTabActive()}" ng-disabled="disabled()" class="tab-item" icon="ion-ios-cloud"><!-- ngIf: badge --><!-- ngIf: getIcon() --><i class="icon ion-ios-cloud" ng-if="getIcon()" style=""></i><!-- end ngIf: getIcon() --><span class="tab-title ng-binding" ng-bind-html="title">Doações Feitas</span></a></div><ion-nav-view name="tab1" class="view-container tab-content" nav-view="cached" nav-view-transition="android" nav-view-direction="none" nav-swipe=""><ion-view id="page2" class="pane" state="tabsController.sobre" nav-view="active" style="transform: translate3d(0%, 0px, 0px); opacity: 1;">
+  <ion-content padding="true" class="scroll-content ionic-scroll overflow-scroll  has-header has-tabs-top" ng-controller="AboutController"><div class="scroll padding">
+    <div class="list card" id="sobre-card21">
+      <ion-item class="item-avatar item" id="sobre-list-item3">
+        <img src="./210i2uzWTpOQiEhUaH6R_Papel-de-parede-Bolsonaro-presidente.jpg">
+        <h2 class="ng-binding">Bolsonaro 2018</h2>
+      </ion-item>
+      <ion-slides disable-side-menu-drag="" options="{&#39;loop&#39;: true}" slider="slider1" delegate-handle="slider1" id="sobre-slider1" style="width:100%;height:200px;"><div class="swiper-container swiper-container-horizontal"><div class="swiper-wrapper" ng-transclude="" style="transform: translate3d(-305px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" id="sobre-slide25" style="background: url(&quot;&quot;) center center / cover no-repeat; width: 305px;" data-swiper-slide-index="0"></div>
+        <div class="swiper-slide swiper-slide-active" ng-transclude="" id="sobre-slide25" style="background: url(&quot;img/bolsonaro.jpg&quot;) center center / cover no-repeat; width: 305px;" data-swiper-slide-index="0"></div>
+      <div class="swiper-slide swiper-slide-duplicate swiper-slide-next" id="sobre-slide25" style="background: url(&quot;&quot;) center center / cover no-repeat; width: 305px;" data-swiper-slide-index="0"></div></div><div ng-hide="!showPager" class="swiper-pagination swiper-pagination-clickable"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div></div></ion-slides>
+      <div class="item item-body" id="sobre-list-item-container2">
+        <div id="sobre-markdown2" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;" class="ng-binding">Doe para o nosso futuro presidente...  **Bolsonaro**</p>
+        </div>
+      </div>
+      <ion-item class="item-icon-left assertive item item-complex" id="sobre-list-item4" ui-sref="tabsController.doaEsEfetuadas()"><a class="item-content">
+        <i class="icon ion-cash"></i>Doar</a></ion-item>
+    </div>
+  </div></ion-content>
+</ion-view></ion-nav-view><ion-nav-view name="tab2" class="view-container tab-content" nav-view="active" nav-view-transition="android" nav-view-direction="swap" nav-swipe=""><ion-view id="page4" class="pane" state="tabsController.doaEs" nav-view="active" style="transform: translate3d(0%, 0px, 0px); opacity: 1;">
+  <ion-content padding="true" class="scroll-content ionic-scroll overflow-scroll  has-header has-tabs-top" ng-controller="DoarControler"><div class="scroll padding">
+        <script src="./jquery.min.js.download" type="text/javascript"></script>
+    <div> 
+    <div id="doaEs-container1">
+      <h3 id="doaEs-heading1" style="color:#888888;font-weight:400;text-align:center;">Favor preencher dados:</h3>
+      <div class="spacer" style="width: 300px; height: 10px;"></div>
+    </div>
+    <form id="doaEs-form4" class="list ng-dirty ng-valid-parse ng-valid ng-valid-required ng-submitted" style="">   
+      <p class="range range-positive">Valor:
+        <input type="range" min="1" max="3000" step="1" required="" ng-model="valor" class="ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" style="">
+         <span class="input-label ng-binding" ng-hide="valor == null" aria-label="R$ {{valor}},00" id="_label-2" style="">R$ 1,00</span>
+      </p> 
+      <div class="spacer" style="width: 0px; height: 21px;"></div>
+             <button ng-click="insertDoa(&#39;&#39;,cpf,rg,cidade,estado, valor)" id="doaEs-button52" ui-sref="" class="button button-balanced button-block icon-right ion-cash">Doar</button>
+        </form>
+    </div>
+  </div></ion-content>
+</ion-view></ion-nav-view></ion-tabs>
+</ion-view></ion-nav-view>
+    </ion-side-menu-content>
+    <!-- <ion-side-menu side="left" id="side-menu21">
+      <ion-header-bar class="bar-stable">
+        <div class="title">Menu</div>
+      </ion-header-bar>
+
+    </ion-side-menu> -->
+  </ion-side-menus>
+</div>
+    <!-- Ionic Dev Server: Injected LiveReload Script -->
+  <script src="./livereload.js.download" async="" defer=""></script>
+
+
+<iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" tabindex="0" vspace="0" width="100%" id="I0_1503504436682" name="I0_1503504436682" src="./iframe.html" style="position: absolute; top: -100px; width: 1px; height: 1px;"></iframe></body></html>

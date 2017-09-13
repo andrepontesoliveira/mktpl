@@ -50,6 +50,16 @@ angular.module('app.routes', [])
     }
   })
 
+    .state('menu.orcamentoeditar', {
+    url: '/page53',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/orcamentoeditar.html',
+        controller: 'orcamentoCtrl'
+      }
+    }
+  })
+
   .state('menu.AI', {
     url: '/page4',
     views: {

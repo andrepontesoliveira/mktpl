@@ -488,6 +488,13 @@ function ($scope, $stateParams) {
     }, 100)};
     getOrcamento();
 
+    function guid() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+    }
+
      function getOrcamento() {
         OrcamentodataFactory.getOrcamento()
              .then(function (response) {
@@ -497,10 +504,18 @@ function ($scope, $stateParams) {
              });
      };
 
-  
+     var edt = false;
 
-    $scope.insertOrcamento = function (nome,email,fone,servint,status) {
+    
+    $scope.updateOrcamento = function (id,nome,email,fone,servint,status) {
+    
+        alert(id);
+        var edt = true;
+
+
+
                   var data ={
+                  uid: id,    
                   nome: nome,
                   email: email,
                   fone: fone,
@@ -508,7 +523,32 @@ function ($scope, $stateParams) {
                   status: status
                 };
     
-                  OrcamentodataFactory.insertOrcamento(data)
+                  OrcamentodataFactory.updateOrcamento(data,id)
+            .then(function (response) {
+               alert("Orçamento alterado com sucesso")
+               getOrcamento()
+            }, function(error) {
+                $scope.status = 'Unable to insert categorie: ' + error.message;
+                alert($scope.status);
+            });
+    };
+    
+
+    $scope.insertOrcamento = function (nome,email,fone,servint,status) {
+
+          var uid = guid();
+
+
+                  var data ={
+                  uid: uid,    
+                  nome: nome,
+                  email: email,
+                  fone: fone,
+                  servint: servint,
+                  status: status
+                };
+    
+                  OrcamentodataFactory.insertOrcamento(data,uid)
             .then(function (response) {
                $state.go('menu.orcamentosucesso');
                getOrcamento()

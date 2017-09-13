@@ -79,10 +79,12 @@ angular.module('app.services', [])
         return $http.get(urlBase);
     };
 
-    dataFactory.insertOrcamento = function (data) {
-        return $http.post("https://mktplace-38546.firebaseio.com/orcamento.json", data);
+    dataFactory.insertOrcamento = function (data,uid) {
+        return $http.put("https://mktplace-38546.firebaseio.com/orcamento/"+uid+".json", data);
     };
-
+    dataFactory.updateOrcamento = function (data,uid) {
+        return $http.put("https://mktplace-38546.firebaseio.com/orcamento/"+uid+".json", data);
+    };
     return dataFactory;
 }]);
  

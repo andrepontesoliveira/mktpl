@@ -1,5 +1,7 @@
 <ion-view  title="Quero Saber Mais!" id="page19">  
   <ion-content padding="true" class="has-header" ng-controller="orcamentoController">
+   <ion-refresher on-refresh="doRefresh()">
+     </ion-refresher>  
     <form class="list" ng-show="!isAdmin()">
       <label class="item item-input item-stacked-label">
         <span class="input-label">Nome:</span>
@@ -24,10 +26,19 @@
     </a> 
     </form> 
      <ion-item class="item-icon-left balanced" ng-show="isAdmin()" ng-repeat="orcamentos in orcamento" id="login-list-item4">
-        <i class="icon ion-android-checkbox"></i><b>Nome:</b> {{orcamentos.nome}}<br>
+      <i class="icon ion-android-checkbox" ></i><b>Unique ID:</b> 
+      <input type="text" id="someId" disabled="disabled" value="{{orcamentos.uid}}" placeholder="{{orcamentos.uid}}" ng-model="id"/>
+      <br>  
+      <i class="icon ion-android-checkbox"></i><b>Nome:</b> {{orcamentos.nome}}<br>
         <i class="icon ion-android-checkbox"></i><b>E-mail:</b> {{orcamentos.email}}<br>
         <i class="icon ion-android-checkbox"></i><b>Fone:</b> {{orcamentos.fone}}<br>
         <i class="icon ion-android-checkbox"></i><b>Serviço de interesse:</b> {{orcamentos.servint}}<br>
         <i class="icon ion-android-checkbox"></i><b>Status:</b> {{orcamentos.status}}<br>
+        <i class="icon ion-android-checkbox"></i><b>Novo Status:</b><input style="    background-color: darkgray;border-radius: 5px;" ng-model="status" type="text" name="status" id="status"><br>
+        
+        <div align="right">
+        <button class="button button-balanced button-small "  ng-click="updateOrcamento('{{orcamentos.uid}}','{{orcamentos.nome}}','{{orcamentos.email}}','{{orcamentos.fone}}','{{orcamentos.servint}}',status)" >Salvar</button>
+
+
   </ion-content>
 </ion-view>

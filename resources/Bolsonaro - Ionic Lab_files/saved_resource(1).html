@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://localhost:8100/?ionicplatform=ios&ionicstatusbarpadding=true#/page5 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Signup</title>
+
+    
+          <!-- firebase & angularfire libraries -->
+      <script src="./cb=gapi.loaded_0" async=""></script><script src="./firebase.js.download"></script>
+      <script src="./angularfire.min.js.download"></script>
+    <script src="./ionic.bundle.js.download"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="./cordova.js.download"></script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <link href="./ionic.app.css" rel="stylesheet">
+
+    <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px; 
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+      }
+      .show-list-numbers-and-dots ul{
+        list-style-type: disc;
+        padding-left:40px;
+      }
+      .show-list-numbers-and-dots ol{
+        list-style-type: decimal;
+        padding-left:40px;
+      }
+    </style>
+
+    <script src="./app.js.download"></script>
+    <script src="./controllers.js.download"></script>
+    <script src="./routes.js.download"></script>
+    
+    <script src="./directives.js.download"></script>
+    <script src="./services.js.download"></script>
+    <script src="./ionic.cloud.min.js.download"></script>
+    <script src="./ionic.cloud.init.js.download"></script>
+    <script src="./firebase.js(1).download"></script>
+    <script src="./angularfire.min.js(1).download"></script>
+    <script src="./firebase.init.js.download"></script>
+
+    
+    <script src="./ionicUIRouter.js.download"></script>
+    
+
+    <link href="./style(1).css" rel="stylesheet">
+    <link href="./ionic.css" rel="stylesheet">
+    <script src="./ionic.bundle.js(1).download"></script>
+
+
+  <script type="text/javascript" charset="UTF-8" src="./api.js(1).download" gapi_processed="true"></script></head>
+  <body ng-app="app" animation="slide-left-right-ios7" class="grade-a platform-browser platform-ios platform-ready">
+  <div>
+  <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21" class=" view">
+    <ion-side-menu-content class="menu-content pane">
+      <ion-nav-bar class="bar-stable nav-bar-container" nav-bar-transition="ios" nav-bar-direction="none" nav-swipe="">
+        <ion-nav-back-button class="hide"></ion-nav-back-button>
+        <!-- <ion-nav-buttons side="left">
+          <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons> -->
+      <div class="nav-bar-block" nav-bar="cached"><ion-header-bar class="bar-stable bar bar-header" align-title="center"><button ng-click="$ionicGoBack()" class="button back-button hide buttons button-clear header-item"><i class="icon ion-ios-arrow-back"></i> <span class="back-text"><span class="default-title">Back</span><span class="previous-title hide"></span></span></button><div class="title title-center header-item"></div></ion-header-bar></div><div class="nav-bar-block" nav-bar="active"><ion-header-bar class="bar-stable bar bar-header" align-title="center"><button ng-click="$ionicGoBack()" class="button back-button hide buttons button-clear header-item"><i class="icon ion-ios-arrow-back"></i> <span class="back-text"><span class="default-title">Back</span><span class="previous-title hide"></span></span></button><div class="title title-center header-item">Signup</div></ion-header-bar></div></ion-nav-bar>
+      <ion-nav-view class="view-container" nav-view-transition="ios" nav-view-direction="none" nav-swipe=""><ion-view id="page5" class="pane" state="signup" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+  <ion-content padding="true" class="scroll-content ionic-scroll  has-header"><div class="scroll padding" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+    <form id="signup-form1" class="list ng-pristine ng-invalid ng-invalid-required" style="">
+      <!-- ngIf: error -->
+      <ion-list id="signup-list1" class="disable-user-behavior"><div class="list">
+        <label class="item item-input" id="signup-input1">
+          <span class="input-label" aria-label="Nome" id="_label-0">Nome</span>
+          <input type="text" placeholder="" required="" ng-model="data.name" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" style="">
+        </label>
+        <label class="item item-input" id="signup-input1">
+          <span class="input-label" aria-label="Cidade" id="_label-1">Cidade</span>
+          <input type="text" placeholder="" required="" ng-model="data.cidade" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" style="">
+        </label>
+        <label class="item item-input" id="signup-input1">
+          <span class="input-label" aria-label="Estado" id="_label-2">Estado</span>
+          <input type="text" placeholder="" required="" ng-model="data.estado" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" style="">
+        </label>
+        <label class="item item-input" id="signup-input2">
+          <span class="input-label" aria-label="CPF" id="_label-3">CPF</span>
+          <input type="text" placeholder="" required="" ng-model="data.cpf" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" style="">
+        </label>
+         <label class="item item-input" id="signup-input2">
+          <span class="input-label" aria-label="RG" id="_label-4">RG</span>
+          <input type="text" placeholder="" required="" ng-model="data.rg" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" style="">
+        </label>
+        <label class="item item-input" id="signup-input1">
+          <span class="input-label" aria-label="Email (opcional)" id="_label-5">Email (opcional)</span>
+          <input type="text" placeholder="" required="" ng-model="data.email" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" style="">
+        </label>
+        <label class="item item-input" id="signup-input3">
+          <span class="input-label" aria-label="Senha" id="_label-6">Senha</span>
+          <input type="password" placeholder="" required="" ng-model="data.password" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" style="">
+        </label>
+        <label class="item item-input" id="signup-input4">
+          <span class="input-label" aria-label="RG (Foto)" id="_label-7">RG (Foto)</span>
+          <input type="file" name="rgfile" id="rgfile" class="inputfile ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required="" ng-model="data.rgfile" style="">
+            <label for="rgfile" class="inputfile-label">
+               RG
+            </label>
+        </label>
+        <label class="item item-input" id="signup-input5">
+          <span class="input-label" aria-label="CPF (Foto)" id="_label-8">CPF (Foto)</span>
+          <input type="file" name="cpffile" id="cpffile" class="inputfile ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required="" ng-model="data.cpffile" style="">
+            <label for="cpffile" class="inputfile-label">
+               CPF
+            </label>
+        </label>
+      </div></ion-list>
+      <button id="signup-button1" ng-click="signup()" class="button button-balanced button-block">Criar Conta</button>
+      <a ui-sref="login()" id="login-button8" class="button button-positive button-block button-clear" href="http://localhost:8100/?ionicplatform=ios&amp;ionicstatusbarpadding=true#/page7">Ou Fazer Login</a>
+    </form>
+  </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 454px;"></div></div></ion-content>
+</ion-view></ion-nav-view>
+    </ion-side-menu-content>
+    <!-- <ion-side-menu side="left" id="side-menu21">
+      <ion-header-bar class="bar-stable">
+        <div class="title">Menu</div>
+      </ion-header-bar>
+
+    </ion-side-menu> -->
+  </ion-side-menus>
+</div>
+    <!-- Ionic Dev Server: Injected LiveReload Script -->
+  <script src="./livereload.js.download" async="" defer=""></script>
+
+
+<iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" tabindex="0" vspace="0" width="100%" id="I0_1503504438971" name="I0_1503504438971" src="./iframe(1).html" style="position: absolute; top: -100px; width: 1px; height: 1px;"></iframe></body></html>

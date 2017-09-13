@@ -1,0 +1,254 @@
+angular.module('app.controllers', [])
+  
+.controller('sobreCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+
+}])
+   
+.controller('doaEsEfetuadasCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+
+}])
+   
+.controller('doaEsCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+
+}])
+      
+.controller('menuCtrl', ['$rootScope','$scope', '$stateParams', '$ionicUser', '$ionicAuth', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $rootScope , $stateParams, $ionicUser, $ionicAuth) {
+
+        $scope.logout = function(){
+        $ionicAuth.logout();
+        $state.go('menu.login');
+    }
+
+
+}])
+   
+.controller('signupCtrl', ['$rootScope','$scope', '$stateParams', '$ionicAuth', '$ionicUser', '$state','UserdataFactory', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $rootScope ,$stateParams, $ionicAuth, $ionicUser, $state,UserdataFactory) {
+
+    // if ($ionicAuth.isAuthenticated()) {
+    //     // Make sure the user data is going to be loaded
+    //     $state.go('tabsController.sobre');
+    //     }
+    
+    $scope.data = {
+        'name': '',
+        'cidade': '',
+        'estado': '',
+        'cpf': '',
+        'rg': '',
+        'email': '',
+        'password': '',
+        'rgfile': '',
+        'cpffile': ''
+    }
+
+    $rootScope.usuarioLogado = false;
+    
+    $scope.error='';
+
+    
+
+    $scope.signup = function(){
+        
+        var data = $scope.data;
+
+        $scope.error = '';
+
+        data.cpffile = $scope.data.cpffile;
+        data.rgfile = $scope.data.rgfile;
+
+
+        UserdataFactory.insertUser(data,data.cpf)
+            .then(function (response) {
+               alert("usuário Criado!");
+                $rootScope.usuario = data.cpf;
+               $state.go('tabsController.sobre'); 
+            }, function(error) {
+                $scope.status = 'Unable to insert user: ' + error.message;
+                alert($scope.status);
+            });
+
+           
+
+
+    }
+
+}])
+
+.controller('AboutController',['$scope','$state', 'AboutdataFactory', 
+ function ($scope,$state ,AboutdataFactory) {
+     getAbout();
+
+     function getAbout() {
+        AboutdataFactory.getAbout()
+             .then(function (response) {
+                 $scope.list = response.data;
+               
+             }, function (error) {
+                 $scope.status = 'Unable to load app data: ' + error.message;
+                 alert($scope.status);
+             });
+     };
+}])
+   
+.controller('DoacoesController',['$scope','$state','$ionicUser', 'DoacoesdataFactory', 
+ function ($scope,$state,$ionicUser ,DoacoesdataFactory) {
+    $scope.doRefresh = function() {
+    
+    console.log('Refreshing!');
+    $timeout( function() {
+      //simulate async response
+      getDoacoes();
+
+      //Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+    
+    }, 1000);
+      
+  };
+
+     getDoacoes();
+
+     function getDoacoes(usr) {
+        DoacoesdataFactory.getDoacoes()
+             .then(function (response) {
+                 $scope.listDoac = response.data;
+             }, function (error) {
+                 $scope.status = 'Unable to load app data: ' + error.message;
+                 alert($scope.status);
+             });
+     };
+            
+}])
+
+.controller('DoarControler',['$rootScope','$scope','$state','$ionicUser','DoardataFactory', 
+ function ($rootScope,$scope,$state,$ionicUser,DoardataFactory) {
+     $scope.userData = $ionicUser.details;
+    
+        $scope.insertDoa = function (valor) {
+        if( valor != null){ 
+           
+           var id =  $rootScope.usuario;
+
+           alert(id);
+
+         if(confirm("Eu, " + nome +", portador do CPF: "+cpf + " , e do RG :" +rg +" , Residente na cidade de: "+ cidade +" , Estado: "+ estado + " , confirmo a doação no valor de:  R$ " + valor + ",00")){  
+
+
+        var generatedId = parseInt((Math.random() * 100), 10);
+            
+               var data ={
+                  nome:user.name, 
+                  cpf:user.cpf, 
+                  rg:user.rg, 
+                  cidade:user.cidade, 
+                  estado:user.estado, 
+                  valor: valor,
+                  id: generatedId};
+
+            
+        DoardataFactory.insertDoa(data,generatedId)
+            .then(function (response) {
+               alert("Doação Efetuada!");
+            }, function(error) {
+                $scope.status = 'Unable to insert donation: ' + error.message;
+                alert($scope.status);
+            });
+
+           $state.go('tabsController.doaEsEfetuadas'); 
+        }else{
+            alert("Doação Cancelada!");
+            $state.go('tabsController.sobre');
+        } }else{
+            alert("Favor Preencher os Campos.");
+        } 
+
+
+    }
+ 
+}])
+
+
+.controller('loginCtrl', ['$http','$firebase', '$firebaseArray','$scope','$rootScope', '$stateParams', '$ionicUser', '$ionicAuth', '$state', 'GetUserdataFactory', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($http,$firebase, $firebaseArray,$rootScope,$scope, $stateParams, $ionicUser, $ionicAuth, $state, GetUserdataFactory) {
+
+
+    getUsers();
+
+    $scope.data = {
+        'cpf': '',
+        'password': ''
+    }
+    
+    
+    $scope.error = '';
+    var users;
+    var user;
+
+       function getUsers() {
+        GetUserdataFactory.getUsers()
+             .then(function (response) {
+                 users  = response.data;
+
+             }, function (error) {
+                 $scope.status = 'Unable to load app data: ' + error.message;
+                 alert($scope.status);
+             });
+     };
+
+     function getUser(id) {
+        GetUserdataFactory.getUser(id)
+             .then(function (response) {
+                 user  = response.data;
+
+             }, function (error) {
+                 $scope.status = 'Unable to load app data: ' + error.message;
+                 alert($scope.status);
+             });
+     };
+    
+    
+      $scope.loginUser = function() {
+
+      
+        var keys = Object.keys(users); 
+        var totalUsers = keys.length;
+        var userCPF = $scope.data.cpf;
+        var userPWD = $scope.data.password;
+
+
+
+    
+
+         for( i=0; i < totalUsers; i++ ) { 
+             getUser(keys[i]);
+            if(keys[i] === userCPF && user.password === userPWD ) {            
+            $state.go('tabsController.sobre');
+            break;
+            } else {
+            alert("CPF não cadastrado ou Senha Incorreta!")
+        }
+        }
+    }
+
+     
+}]);
