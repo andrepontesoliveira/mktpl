@@ -555,7 +555,7 @@ function ($scope, $stateParams) {
                   status: status 
                 };
     
-         if (confirm("Confirma a compra?")){       
+         if (confirm('Ao efetuar esta compra, você adquire este artigo.\nO mesmo só pode ser utilizado para os meios propostos.\nO mesmo não pode ser replicado ou repassado.\nConfirma a compra?')){       
                   OrcamentodataFactory.insertOrcamento(data,uid)
             .then(function (response) {
                $state.go('menu.orcamentosucesso');

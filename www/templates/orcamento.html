@@ -1,4 +1,4 @@
-<ion-view  title="Quero Saber Mais!" id="page19">  
+<ion-view  title="Contratação" id="page19">  
   <ion-content padding="true" class="has-header" ng-controller="orcamentoController">
    <ion-refresher on-refresh="doRefresh()">
      </ion-refresher>  
@@ -23,7 +23,7 @@
       <label class="item item-input item-stacked-label">
         <span class="input-label">Valor:</span>
         <br/>
-        {{valores}}
+        R$ {{valores}},00
       </label>
 
 
@@ -39,6 +39,7 @@
         <i class="icon ion-android-checkbox"></i><b>Fone:</b> {{orcamentos.fone}}<br>
         <i class="icon ion-android-checkbox"></i><b>Serviço de interesse:</b> {{orcamentos.servInt}}<br>
         <i class="icon ion-android-checkbox"></i><b>Status:</b> {{orcamentos.status}}<br>
+		<i class="icon ion-android-checkbox"></i><b>Valor:</b> {{orcamentos.valor}}<br>
         <i class="icon ion-android-checkbox"></i><b>Novo Status:</b><input style="    background-color: darkgray;border-radius: 5px;" ng-model="status" type="text" name="status" id="status"><br>
         
         <div align="right">
